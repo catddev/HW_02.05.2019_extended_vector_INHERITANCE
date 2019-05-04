@@ -94,7 +94,7 @@ inline void extendedVector<T>::add_pos(int pos, T el)
 	else if (this->cur_size < this->buf_size) {
 		
 		for (int i = pos, j=0; i < Vector<T>::cur_size; i++, j++)
-			//IMPORTANT: order of elements copyed - from the end as vector is changed from the beginning
+			//IMPORTANT: order of elements copyed - from the end as vector is changed from the given position
 			Vector<T>::els[Vector<T>::cur_size-j] = Vector<T>::els[Vector<T>::cur_size - j - 1];
 		Vector<T>::els[pos] = el;
 
