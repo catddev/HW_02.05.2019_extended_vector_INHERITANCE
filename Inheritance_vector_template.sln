@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Inheritance_vector_template", "Inheritance_vector_template\Inheritance_vector_template.vcxproj", "{59094485-FF8A-4B93-A82C-42B23961D2C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59094485-FF8A-4B93-A82C-42B23961D2C0}.Debug|x64.ActiveCfg = Debug|x64
+		{59094485-FF8A-4B93-A82C-42B23961D2C0}.Debug|x64.Build.0 = Debug|x64
+		{59094485-FF8A-4B93-A82C-42B23961D2C0}.Debug|x86.ActiveCfg = Debug|Win32
+		{59094485-FF8A-4B93-A82C-42B23961D2C0}.Debug|x86.Build.0 = Debug|Win32
+		{59094485-FF8A-4B93-A82C-42B23961D2C0}.Release|x64.ActiveCfg = Release|x64
+		{59094485-FF8A-4B93-A82C-42B23961D2C0}.Release|x64.Build.0 = Release|x64
+		{59094485-FF8A-4B93-A82C-42B23961D2C0}.Release|x86.ActiveCfg = Release|Win32
+		{59094485-FF8A-4B93-A82C-42B23961D2C0}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {445ECFD0-4480-4F6E-80EF-134BC7DE07D5}
+	EndGlobalSection
+EndGlobal
