@@ -74,14 +74,8 @@ inline void extendedVector<T>::del_pos(int pos)
 template<typename T>
 inline void extendedVector<T>::add_pos(int pos, T el)
 {
-	if (Vector<T>::buf_size == 0)
-	{
-		Vector<T>::buf_size = pos + 1;//minimal needed memory
-		Vector<T>::els = new T[Vector<T>::buf_size];
-		for (int i = 0; i < pos; i++)
-			Vector<T>::els[i] = 0;
-		Vector<T>::els[pos] = el;
-		Vector<T>::cur_size = pos + 1;
+	if (pos>=cur_size) {
+		Vector<T>::add(el);
 	}
 	else if (Vector<T>::cur_size == Vector<T>::buf_size) {
 		Vector<T>::buf_size *= 2;
