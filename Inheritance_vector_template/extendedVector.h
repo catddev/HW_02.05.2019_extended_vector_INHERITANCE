@@ -15,12 +15,9 @@ public:
 	void add_pos(int pos, T el);
 
 	bool empty();
-
-	friend ostream & operator<<(ostream& os, extendedVector<T> obj);
 };
-template<typename T>
-ostream & operator<<(ostream& os, extendedVector<T> obj);
 
+//для наследования шаблонного класса необходимо использовать this-> либо Vector<T>::
 template<typename T>
 inline extendedVector<T>::~extendedVector()
 {
@@ -110,12 +107,4 @@ template<typename T>
 inline bool extendedVector<T>::empty()
 {
 	return(Vector<T>::cur_size == 0);
-}
-
-template<typename T>
-ostream & operator<<(ostream& os, extendedVector<T> obj)
-{
-	for (int i = 0; i < Vector<T>::size(); i++)
-		os << obj.els[i] << endl;
-	return os;
 }

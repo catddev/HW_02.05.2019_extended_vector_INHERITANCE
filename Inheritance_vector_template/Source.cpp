@@ -38,8 +38,8 @@ int main() {
 	//cout << endl;
 
 	while (!ss.empty()) {
-		cout << ss[0];
-		ss.del_front();
+		cout << ss[0];//printting first el
+		ss.del_front();//deleting first el
 	}
 
 
