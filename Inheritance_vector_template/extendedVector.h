@@ -40,7 +40,6 @@ inline void extendedVector<T>::add_front(T el)
 		Vector<T>::buf_size = 4;
 		Vector<T>::els = new T[Vector<T>::buf_size];
 		Vector<T>::els[0] = el;
-		Vector<T>::cur_size++;
 	}
 	else if (Vector<T>::cur_size == Vector<T>::buf_size) {
 		Vector<T>::buf_size *= 2;
@@ -51,17 +50,15 @@ inline void extendedVector<T>::add_front(T el)
 		tmp[0] = el;
 		delete[] Vector<T>::els;
 		Vector<T>::els = tmp;
-		Vector<T>::cur_size++;
-		//return;
 	}
 	else if (this->cur_size < this->buf_size) {
 		
 		for (int i = 0; i < Vector<T>::cur_size; i++)
-			Vector<T>::els[i + 1] = Vector<T>::els[i];
+			//IMPORTANT: order of elements copyed - from the end as vector is changed from the beginning
+			Vector<T>::els[Vector<T>::cur_size - i] = Vector<T>::els[Vector<T>::cur_size - i - 1];
 		Vector<T>::els[0] = el;
-
-		Vector<T>::cur_size++;
 	}
+	Vector<T>::cur_size++;
 }
 
 template<typename T>
@@ -96,8 +93,9 @@ inline void extendedVector<T>::add_pos(int pos, T el)
 	}
 	else if (this->cur_size < this->buf_size) {
 		
-		for (int i = pos; i < Vector<T>::cur_size; i++)
-			Vector<T>::els[i + 1] = Vector<T>::els[i];
+		for (int i = pos, j=0; i < Vector<T>::cur_size; i++, j++)
+			//IMPORTANT: order of elements copyed - from the end as vector is changed from the beginning
+			Vector<T>::els[Vector<T>::cur_size-j] = Vector<T>::els[Vector<T>::cur_size - j - 1];
 		Vector<T>::els[pos] = el;
 
 		Vector<T>::cur_size++;

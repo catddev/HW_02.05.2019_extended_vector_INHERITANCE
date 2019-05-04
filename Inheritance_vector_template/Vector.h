@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include <iostream>
+#include<iomanip>
 using namespace std;
 
 template <typename T>
@@ -120,6 +121,6 @@ template<typename T>
 inline void Vector<T>::print()
 {
 	for (int i = 0; i < Vector<T>::size(); i++)
-		cout << els[i] << endl;
-	cout << endl;
+		cout << setw(5) << left << els[i] << " ";
+	cout << endl << endl;
 }
