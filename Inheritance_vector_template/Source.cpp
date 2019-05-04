@@ -7,16 +7,16 @@ int main() {
 	//777???
 
 	//for (int i = 0; i < 5; i++) {
-	//	eV.add_front(100);
 	//	eV.add(777);//why not first?
-	//	//eV.add_front(100);
+	//	eV.add_front(i+1);
 	//}
 
-	//eV.add_pos(5, 999);
+	eV.add_pos(5, 999);
 	//eV.print();
+
 	for (int i = 0; i < 5; i++){
 		eV.add_front(i+1);
-		eV.add(777);
+		//eV.add(777);
 	}
 
 	//eV.del();
