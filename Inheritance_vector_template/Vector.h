@@ -87,7 +87,7 @@ inline void Vector<T>::add(T el)
 		els = tmp;
 		els[cur_size++] = el;
 	}
-	else
+	else if (cur_size < buf_size)
 		els[cur_size++] = el;
 }
 

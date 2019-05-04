@@ -46,18 +46,19 @@ inline void extendedVector<T>::add_front(T el)
 		Vector<T>::buf_size *= 2;
 		T *tmp = new T[Vector<T>::buf_size];
 
-		tmp[0] = el;
 		for (int i = 0; i < Vector<T>::cur_size; i++)
 			tmp[i + 1] = Vector<T>::els[i];
+		tmp[0] = el;
 		delete[] Vector<T>::els;
 		Vector<T>::els = tmp;
 		Vector<T>::cur_size++;
 		//return;
 	}
 	else if (this->cur_size < this->buf_size) {
-		Vector<T>::els[0] = el;
+		
 		for (int i = 0; i < Vector<T>::cur_size; i++)
 			Vector<T>::els[i + 1] = Vector<T>::els[i];
+		Vector<T>::els[0] = el;
 
 		Vector<T>::cur_size++;
 	}
@@ -74,24 +75,30 @@ inline void extendedVector<T>::del_pos(int pos)
 template<typename T>
 inline void extendedVector<T>::add_pos(int pos, T el)
 {
-	if (pos>=cur_size) {
+	if (pos>=Vector<T>::cur_size) {
 		Vector<T>::add(el);
 	}
 	else if (Vector<T>::cur_size == Vector<T>::buf_size) {
 		Vector<T>::buf_size *= 2;
 		T *tmp = new T[Vector<T>::buf_size];
 
-		tmp[pos] = el;
-		for (int i = pos; i < Vector<T>::cur_size; i++)
-			tmp[i + 1] = Vector<T>::els[i];
+		for (int i = 0; i < Vector<T>::cur_size; i++) {
+			if(i==pos)
+				tmp[pos] = el;
+			else if (i > pos)
+				tmp[i + 1] = Vector<T>::els[i];
+			else
+				tmp[i] = Vector<T>::els[i];
+		}
 		delete[] Vector<T>::els;
 		Vector<T>::els = tmp;
 		Vector<T>::cur_size++;
 	}
 	else if (this->cur_size < this->buf_size) {
-		Vector<T>::els[pos] = el;
+		
 		for (int i = pos; i < Vector<T>::cur_size; i++)
 			Vector<T>::els[i + 1] = Vector<T>::els[i];
+		Vector<T>::els[pos] = el;
 
 		Vector<T>::cur_size++;
 	}
